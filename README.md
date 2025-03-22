@@ -31,7 +31,6 @@ This Flask application allows users to create interactive grid maps, set start a
 1. Make sure you have Docker and Docker Compose installed
 2. Build and run the application using Docker Compose:
    ```
-   docker-compose build
    docker-compose up
    ```
 
