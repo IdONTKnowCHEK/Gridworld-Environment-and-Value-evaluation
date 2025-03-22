@@ -13,6 +13,8 @@ This Flask application allows users to create interactive grid maps, set start a
 
 ## Installation
 
+### Option 1: Standard Installation
+
 1. Clone the repository
 2. Install dependencies:
    ```
@@ -22,6 +24,15 @@ This Flask application allows users to create interactive grid maps, set start a
 3. Run the application:
    ```
    python app.py
+   ```
+
+### Option 2: Docker Installation
+
+1. Make sure you have Docker and Docker Compose installed
+2. Build and run the application using Docker Compose:
+   ```
+   docker-compose build
+   docker-compose up
    ```
 
 4. Open your browser and navigate to `http://127.0.0.1:5000/`
