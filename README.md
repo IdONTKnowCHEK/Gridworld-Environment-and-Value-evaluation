@@ -1,6 +1,8 @@
 # Grid Map & Policy Evaluation Web Application
 
 This Flask application allows users to create interactive grid maps, set start and end points, place obstacles, and evaluate reinforcement learning policies.
+![image](https://github.com/user-attachments/assets/f53e6bef-bc4d-4efa-ab1b-d3ce399230de)
+
 
 ## Features
 
