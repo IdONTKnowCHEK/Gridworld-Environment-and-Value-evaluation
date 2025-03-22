@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Map & Policy Evaluation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Grid Map & Policy Evaluation</h1>
+            <p>Interactive reinforcement learning grid environment</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="grid-size">Grid Size (5-9):</label>
+                <input type="number" id="grid-size" min="5" max="9" value="5">
+                <button id="create-grid" class="btn primary">Create Grid</button>
+                <button id="reset-grid" class="btn warning">Reset Grid</button>
+            </div>
+            
+            <div class="control-group">
+                <span class="status">Mode: </span>
+                <span id="current-mode" class="mode-indicator">Set Start</span>
+                <div class="legend">
+                    <div class="legend-item"><span class="cell-example start"></span> Start</div>
+                    <div class="legend-item"><span class="cell-example end"></span> End</div>
+                    <div class="legend-item"><span class="cell-example obstacle"></span> Obstacle</div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="obstacle-counter">
+                    <span>Obstacles: </span>
+                    <span id="obstacle-count">0</span>/<span id="max-obstacles">3</span>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="random-policy" class="btn secondary" disabled>Generate Random Policy</button>
+                <!-- Evaluate button hidden via JavaScript -->
+                <button id="evaluate-policy" class="btn primary" disabled style="display:none;">Evaluate Policy</button>
+                <!-- Reset Grid button moved to top control group -->
+            </div>
+        </div>
+        
+        <div class="grid-container">
+            <div id="grid" class="grid"></div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Information</h3>
+            <p>Click on grid cells to set:</p>
+            <ol>
+                <li>Start position (green)</li>
+                <li>End position (red)</li>
+                <li>Obstacles (gray) - Limited to n-2 obstacles</li>
+            </ol>
+            <p>Generate policies using one of the following methods:</p>
+            <ul>
+                <li><strong>Random Policy</strong> - Completely random directions</li>
+                <li><strong>Generate Path</strong> - Find a valid path with random start direction</li>
+                <li><strong>Optimal Path</strong> - Find the best path with optimal start direction</li>
+            </ul>
+            <p>Values are automatically calculated when a policy is generated.</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
